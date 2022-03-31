@@ -13,13 +13,17 @@ for required in ${REQUIRED_COMMANDS[@]}; do
     fi
 done
 
-git clone $REPO
+TMP=$(mktemp -d)
+
+git clone $REPO $TMP
 
 if [ "$EUID" -ne 0 ]
 then
-    sudo chmod -R +x ./$REPO_NAME
-    sudo ./$REPO_NAME/$STARTUP_SCRIPT
+    sudo chmod -R +x $TMP
+    sudo $TMP/$STARTUP_SCRIPT
+    sudo rm -r $TMP
 else
-    chmod -R +x ./$REPO_NAME
-    ./$REPO_NAME/$STARTUP_SCRIPT
+    chmod -R +x $TMP
+    $TMP/$STARTUP_SCRIPT
+    rm -r $TMP
 fi

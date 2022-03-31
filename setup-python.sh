@@ -31,4 +31,4 @@ python3.10 --version
 
 cd $START_DIR
 
-#rm -r $TMP
+sudo rm -r $TMP
