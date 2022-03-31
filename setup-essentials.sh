@@ -1,4 +1,4 @@
-REQUIRED_COMMANDS=(sudo git curl)
+REQUIRED_COMMANDS=(sudo git curl wget)
 
 for required in ${REQUIRED_COMMANDS[@]}; do
     if ! command -v $required &> /dev/null;
