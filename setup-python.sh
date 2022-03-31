@@ -1,4 +1,4 @@
-
+#!/bin/bash
 HERE=$(dirname "$0")
 $HERE/setup-sudo.sh
 $HERE/setup-essentials.sh

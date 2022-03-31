@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Adding user $1..."
 
 HERE=$(dirname "$0")

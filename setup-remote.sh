@@ -1,3 +1,4 @@
+#!/bin/bash
 REPO_NAME=linux-setup
 REPO=https://github.com/Rickebo/$REPO_NAME.git
 STARTUP_SCRIPT=setup.sh

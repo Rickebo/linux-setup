@@ -1,3 +1,4 @@
+#!/bin/bash
 REQUIRED_COMMANDS=(sudo git curl wget)
 
 for required in ${REQUIRED_COMMANDS[@]}; do
