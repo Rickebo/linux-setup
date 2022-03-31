@@ -16,7 +16,9 @@ git clone $REPO
 
 if [ "$EUID" -ne 0 ]
 then
+    sudo chmod -R +x ./$REPO_NAME
     sudo ./$REPO_NAME/$STARTUP_SCRIPT
 else
+    chmod -R +x ./$REPO_NAME
     ./$REPO_NAME/$STARTUP_SCRIPT
 fi
