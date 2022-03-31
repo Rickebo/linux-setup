@@ -1,6 +1,7 @@
 
 HERE=$(dirname "$0")
 $HERE/setup-sudo.sh
+$HERE/setup-essentials.sh
 
 if command -v python3.10 &> /dev/null
 then

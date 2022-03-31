@@ -2,7 +2,7 @@ echo "Adding user $1..."
 
 HERE=$(dirname "$0")
 $HERE/setup-sudo.sh
-$HERE/setup-curl.sh
+$HERE/setup-essentials.sh
 
 sudo useradd -m $1
 sudo passwd $1
