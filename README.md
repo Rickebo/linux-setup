@@ -26,3 +26,8 @@ The script sets up:
 - ssh
   - Sets up ssh configuration to only allow ssh using public keys. Therefore, make sure to specify a GitHub username for
     at least one user to be able to access the system.
+
+## Supported distros
+
+The scripts have been used and tested primarily on Debian 11 "Bullseye", and therefore likely dont work on other
+distros.
