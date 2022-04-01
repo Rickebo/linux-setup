@@ -11,7 +11,7 @@ To run the script, apt must be installed and set up, as well as curl if the comm
 To run the setup script remotely, run the following command:
 
 ```bash
-source <(curl -s https://raw.githubusercontent.com/Rickebo/linux-setup/main/setup-remote.sh)
+wget https://raw.githubusercontent.com/Rickebo/linux-setup/main/setup-remote.sh; sudo bash ./setup-remote.sh
 ```
 
 The script sets up:
