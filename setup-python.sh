@@ -3,9 +3,9 @@ HERE=$(dirname "$0")
 $HERE/setup-sudo.sh
 $HERE/setup-essentials.sh
 
-if command -v python3.10 &> /dev/null
+if command -v python3.11 &> /dev/null
 then
-    echo "Python 3.10 command already exists. Skipping installation of Pyhon 3.10."
+    echo "Python 3.11 command already exists. Skipping installation of Pyhon 3.11."
     exit 0
 fi
 
@@ -14,10 +14,10 @@ sudo apt-get install zlib1g-dev -y
 
 START_DIR=$(pwd)
 TMP=$(mktemp -d)
-TAR_DIR=$TMP/Python-3.10.0
+TAR_DIR=$TMP/Python-3.11.1
 TAR=$TAR_DIR.tgz
 
-wget -O $TAR https://www.python.org/ftp/python/3.10.0/Python-3.10.0.tgz
+wget -O $TAR https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tgz
 mkdir $TAR_DIR
 tar -xf $TAR -C $TMP
 cd $TAR_DIR
@@ -27,7 +27,7 @@ make -j 4
 sudo make altinstall
 
 echo "Installed version: "
-python3.10 --version
+python3.11 --version
 
 cd $START_DIR
 
