@@ -19,7 +19,7 @@ The script sets up:
 - sudo
 - curl (if not installed already)
 - wget
-- Python 3.10
+- Python 3.11
   - compiled from source
 - Users, and SSH keys from GitHub
   - Username, password and GitHub username is specified when script is running
