@@ -5,13 +5,19 @@ HERE=$(dirname "$0")
 $HERE/setup-sudo.sh
 $HERE/setup-essentials.sh
 
-sudo useradd -m $1
-sudo passwd $1
-sudo usermod -aG sudo $1
-sudo usermod --shell /bin/bash $1
+if ! id "$1" &> /dev/null;
+then
+    echo "Creating user $1..."
+    sudo useradd -m $1
+    sudo passwd $1
+    sudo usermod --shell /bin/bash $1
+else
+    echo "User $1 already exists, skipping creation, shell and password setup."
+fi
 
-sudo mkdir /home/$1/.ssh
-sudo chmod 700 /home/$1/.ssh
+sudo usermod -aG sudo $1
+
+sudo mkdir -p -m 700 /home/$1/.ssh
 
 sudo touch /home/$1/.ssh/authorized_keys
 sudo chmod 644 /home/$1/.ssh/authorized_keys
