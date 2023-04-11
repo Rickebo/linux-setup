@@ -19,14 +19,14 @@ else
     if command -v sudo &> /dev/null;
     then
         echo "Re-running the script as root using sudo..."
-        sudo ./$0
+        sudo $0
         exit
     fi
 
     if command -v su &> /dev/null;
     then
         echo "Re-running the script as root using su..."
-        su root -c ./$0
+        su root -c $0
         exit
     fi
 
